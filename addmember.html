@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Add Member</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,10 +10,26 @@
 </head>
 <body>
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://soch4u.com/index.html">SOCH4U Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="addmember.html">Add new member</a></li>
+      <li><a href="newquery.html">New query</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <h2>Add new member</h2>
   <p>Here you can add new donor member of Soch Blood Bank with appropriate details</p>
-  <form class="form-inline" action="addmember.php" method="post" role="form">
+  <form class="form-horizontal" action="addmember.php" method="post" role="form">
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" class="form-control" name="name" placeholder="Enter full name">
