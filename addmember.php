@@ -10,21 +10,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="http://soch4u.com/index.html">SOCH4U Home</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="addmember.html">Add new member</a></li>
-      <li><a href="newquery.html">New query</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
+<?php include_once ("header.php"); ?>
 
 <div class="container">
   
@@ -43,7 +29,15 @@ if ($conn->connect_error) {
 
 } 
 
- $query = "INSERT INTO `SOCH4U`.`input_details` (`name`, `age`, `gender`, `phone`, `blood_group`, `city`) VALUES ('Hamzah Khan', '21', 'M', '8392881444', 'B+', 'Aligarh') ";
+$name = $_POST["name"];
+$age = $_POST["age"];
+$gender = $_POST["gender"];
+$phone=$_POST["phone"];
+$group = $_POST["group"];
+$city = $_POST["city"];
+
+ $query = "INSERT INTO `SOCH4U`.`input_details` (`name`, `age`, `gender`, `phone`, `blood_group`, `city`) VALUES 
+ ('$name', '$age', '$gender', '$phone', '$group', '$city') ";
 if ($conn->query($query) == TRUE) {
     echo "New record created successfully";
 } else {
@@ -56,28 +50,3 @@ $conn->close();
 
 </body>
 </html>
-<!-- <?php
-
-$servername = "35.185.133.86";
-$username = "aamir";
-$password = "mypass";
-$dbname = "SOCH4U";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-
-} 
-
- $query = "INSERT INTO `SOCH4U`.`input_details` (`name`, `age`, `gender`, `phone`, `blood_group`, `city`) VALUES ('Hamzah Khan', '21', 'M', '8392881444', 'B+', 'Aligarh') ";
-if ($conn->query($query) == TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $query . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
- -->
