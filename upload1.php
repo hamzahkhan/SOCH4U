@@ -2,7 +2,7 @@
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 if(isset($_POST["submit"])) {
     $check = getfilesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -25,7 +25,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
     $uploadOk = 0;
 }
 
-if($imageFileType != "csv" ) {
+if($FileType != "csv" ) {
     echo "Sorry, only CSV files are allowed.";
     $uploadOk = 0;
 }
